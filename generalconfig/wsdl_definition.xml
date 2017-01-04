@@ -1,0 +1,353 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<definitions name="wsFDHomeBanking" targetNamespace="ITALCREDWEB" xmlns:wsdlns="ITALCREDWEB" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns1="FinancialWIN" xmlns:tns="ITALCREDWEB">
+	<types>
+		<schema targetNamespace="FinancialWIN" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified">
+			<import namespace="ITALCREDWEB" />
+			<complexType name="FDHBws">
+				<sequence>
+					<element name="CodRetorno" type="xsd:short">
+					</element>
+					<element name="DescRetorno" type="xsd:string">
+					</element>
+					<element name="TipoRetorno" type="xsd:byte">
+					</element>
+					<element name="Disponible" type="tns1:FDHBwsLimDis">
+					</element>
+					<element name="SaldoPFV" type="tns1:FDHBwsSaldoPFV">
+					</element>
+					<element name="OperPend" type="tns1:FDHBwsOperPend">
+					</element>
+					<element name="OperMes" type="tns1:FDHBwsOperMes">
+					</element>
+					<element name="UltRes" type="tns1:FDHBwsUltRes">
+					</element>
+					<element name="CuadRes" type="tns1:FDHBwsCuadRes">
+					</element>
+					<element name="Cierres" type="tns1:FDHBwsCierres">
+					</element>
+					<element name="Tasas" type="tns1:FDHBwsTasas">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsLimDis">
+				<sequence>
+					<element name="DescRetDisp" type="xsd:string">
+					</element>
+					<element name="LimContado" type="xsd:double">
+					</element>
+					<element name="LimCuotas" type="xsd:double">
+					</element>
+					<element name="LimAdelantos" type="xsd:double">
+					</element>
+					<element name="DispContado" type="xsd:double">
+					</element>
+					<element name="DispCuotas" type="xsd:double">
+					</element>
+					<element name="DispAdelantos" type="xsd:double">
+					</element>
+					<element name="DispInter" type="xsd:double">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsSaldoPFV">
+				<sequence>
+					<element name="FecCierreAnt" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecVtoAnt" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecCierreActual" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecVtoActual" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecCierreProx" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecVtoProx" type="xsd:date" nillable="true">
+					</element>
+					<element name="TipoTarjeta" type="xsd:string">
+					</element>
+					<element name="CodGrupoCtaCte" type="xsd:byte">
+					</element>
+					<element name="ImporteSaldoActualLoc" type="xsd:double">
+					</element>
+					<element name="ImporteSaldoActualDol" type="xsd:double">
+					</element>
+					<element name="ImportePagoMin" type="xsd:double">
+					</element>
+					<element name="VtoPagoMin" type="xsd:date" nillable="true">
+					</element>
+					<element name="NombreApellidoSocio" type="xsd:string">
+					</element>
+					<element name="CodBarraProducto" type="xsd:short">
+					</element>
+					<element name="CodBarraEntidad" type="xsd:short">
+					</element>
+					<element name="CodBarraSucursal" type="xsd:short">
+					</element>
+					<element name="CodBarraDVEnt" type="xsd:short">
+					</element>
+					<element name="L137CodArgen" type="xsd:short">
+					</element>
+					<element name="L137EntUnif" type="xsd:short">
+					</element>
+					<element name="L137NroSocio" type="xsd:int">
+					</element>
+					<element name="L137TipoMoneda" type="xsd:short">
+					</element>
+					<element name="L137PagoMinimo" type="xsd:double">
+					</element>
+					<element name="L137SaldoTotal" type="xsd:double">
+					</element>
+					<element name="L137DigVer" type="xsd:short">
+					</element>
+					<element name="L105CodArgen" type="xsd:short">
+					</element>
+					<element name="L105EntUnif" type="xsd:short">
+					</element>
+					<element name="L105NroSocio" type="xsd:int">
+					</element>
+					<element name="L105TipoMoneda" type="xsd:short">
+					</element>
+					<element name="L105SaldoTotal" type="xsd:double">
+					</element>
+					<element name="L105DigVer" type="xsd:short">
+					</element>
+					<element name="L112TipoMoneda" type="xsd:short">
+					</element>
+					<element name="L112Cuenta" type="xsd:int">
+					</element>
+					<element name="L112Autorizado" type="xsd:short">
+					</element>
+					<element name="L112DVSocio" type="xsd:short">
+					</element>
+					<element name="L112DVEan13" type="xsd:short">
+					</element>
+					<element name="L87TipoMoneda" type="xsd:short">
+					</element>
+					<element name="L87Cuenta" type="xsd:int">
+					</element>
+					<element name="L87Autorizado" type="xsd:short">
+					</element>
+					<element name="L87DVSocio" type="xsd:short">
+					</element>
+					<element name="L87DVEan13" type="xsd:short">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsOperPend">
+				<sequence>
+					<element minOccurs="0" maxOccurs="unbounded" name="FDHBwsOperPend.FDHBwsOperPendItem" type="tns1:FDHBwsOperPend.FDHBwsOperPendItem">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsOperPend.FDHBwsOperPendItem">
+				<sequence>
+					<element name="NroAutorizado" type="xsd:short">
+					</element>
+					<element name="CodAutoriz" type="xsd:string">
+					</element>
+					<element name="FecValidez" type="xsd:date" nillable="true">
+					</element>
+					<element name="Descripcion" type="xsd:string">
+					</element>
+					<element name="Moneda" type="xsd:string">
+					</element>
+					<element name="Importe" type="xsd:double">
+					</element>
+					<element name="CanCuotas" type="xsd:short">
+					</element>
+					<element name="NroComercio" type="xsd:long">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsOperMes">
+				<sequence>
+					<element minOccurs="0" maxOccurs="unbounded" name="FDHBwsOperMes.FDHBwsOperMesItem" type="tns1:FDHBwsOperMes.FDHBwsOperMesItem">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsOperMes.FDHBwsOperMesItem">
+				<sequence>
+					<element name="AutoOper" type="xsd:short">
+					</element>
+					<element name="FecOperacion" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecPresentacion" type="xsd:date" nillable="true">
+					</element>
+					<element name="NomFantasia" type="xsd:string">
+					</element>
+					<element name="Moneda" type="xsd:string">
+					</element>
+					<element name="ImporteOperacion" type="xsd:double">
+					</element>
+					<element name="ImportePlanCuotas" type="xsd:double">
+					</element>
+					<element name="CuotasPlan" type="xsd:short">
+					</element>
+					<element name="CuotaVigente" type="xsd:short">
+					</element>
+					<element name="TipoOperacion" type="xsd:string">
+					</element>
+					<element name="NroComercio" type="xsd:long">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsUltRes">
+				<sequence>
+					<element minOccurs="0" maxOccurs="unbounded" name="FDHBwsUltRes.FDHBwsUltResItem" type="tns1:FDHBwsUltRes.FDHBwsUltResItem">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsUltRes.FDHBwsUltResItem">
+				<sequence>
+					<element name="NroAutorizado" type="xsd:short">
+					</element>
+					<element name="FecOperacion" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecPresentacion" type="xsd:date" nillable="true">
+					</element>
+					<element name="NroComercio" type="xsd:long">
+					</element>
+					<element name="TipoMov" type="xsd:string">
+					</element>
+					<element name="Descripcion" type="xsd:string">
+					</element>
+					<element name="Pais" type="xsd:string">
+					</element>
+					<element name="Moneda" type="xsd:string">
+					</element>
+					<element name="Importe" type="xsd:double">
+					</element>
+					<element name="NroCuota" type="xsd:string">
+					</element>
+					<element name="MarcaDeb" type="xsd:string">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsCuadRes">
+				<sequence>
+					<element minOccurs="0" maxOccurs="unbounded" name="FDHBwsCuadRes.FDHBwsCuadResItem" type="tns1:FDHBwsCuadRes.FDHBwsCuadResItem">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsCuadRes.FDHBwsCuadResItem">
+				<sequence>
+					<element name="FecCierre" type="xsd:date" nillable="true">
+					</element>
+					<element name="SaldoActualLOc" type="xsd:double">
+					</element>
+					<element name="ImportePagoMin" type="xsd:double">
+					</element>
+					<element name="SaldoActualDol" type="xsd:double">
+					</element>
+					<element name="FecVencimiento" type="xsd:date" nillable="true">
+					</element>
+					<element name="CantOpLocEnDol" type="xsd:short">
+					</element>
+					<element name="ImporteOpLocEnDol" type="xsd:double">
+					</element>
+					<element name="CantOpLocEnLoc" type="xsd:short">
+					</element>
+					<element name="ImporteOpLocEnLoc" type="xsd:double">
+					</element>
+					<element name="CantOpInt" type="xsd:short">
+					</element>
+					<element name="ImporteOpInt" type="xsd:double">
+					</element>
+					<element name="ImportePagoDol" type="xsd:double">
+					</element>
+					<element name="ImportePagoLoc" type="xsd:double">
+					</element>
+					<element name="MarcaDetalle" type="xsd:string">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsCierres">
+				<sequence>
+					<element name="FecCierreCC1" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecCierreCC2" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecCierreCC3" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecCierreCC4" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecCierreCC5" type="xsd:date" nillable="true">
+					</element>
+					<element name="FecCierreCC6" type="xsd:date" nillable="true">
+					</element>
+				</sequence>
+			</complexType>
+			<complexType name="FDHBwsTasas">
+				<sequence>
+					<element name="TasaTEMLoc" type="xsd:double">
+					</element>
+					<element name="TasaTEMDol" type="xsd:double">
+					</element>
+					<element name="TasaDiariaFinanLoc" type="xsd:double">
+					</element>
+					<element name="TasaDiariaFinanDol" type="xsd:double">
+					</element>
+					<element name="TasaNomAnualLoc" type="xsd:double">
+					</element>
+					<element name="TasaNomAnualDol" type="xsd:double">
+					</element>
+					<element name="TasaIntCompLoc" type="xsd:double">
+					</element>
+					<element name="TasaIntCompDol" type="xsd:double">
+					</element>
+					<element name="TasaDiariaPunitLoc" type="xsd:double">
+					</element>
+					<element name="TasaIntPunitDol" type="xsd:double">
+					</element>
+				</sequence>
+			</complexType>
+		</schema>
+		<schema targetNamespace="ITALCREDWEB" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified">
+			<import namespace="FinancialWIN" />
+			<element name="wsFDHomeBanking.Execute">
+				<complexType>
+					<sequence>
+						<element minOccurs="1" maxOccurs="1" name="Cuenta" type="xsd:int" />
+						<element minOccurs="1" maxOccurs="1" name="Funcion" type="xsd:short" />
+					</sequence>
+				</complexType>
+			</element>
+			<element name="wsFDHomeBanking.ExecuteResponse">
+				<complexType>
+					<sequence>
+						<element minOccurs="1" maxOccurs="1" name="Fdhbws" type="tns1:FDHBws" />
+					</sequence>
+				</complexType>
+			</element>
+		</schema>
+	</types>
+	<message name="wsFDHomeBanking.ExecuteSoapIn">
+		<part name="parameters" element="tns:wsFDHomeBanking.Execute" />
+	</message>
+	<message name="wsFDHomeBanking.ExecuteSoapOut">
+		<part name="parameters" element="tns:wsFDHomeBanking.ExecuteResponse" />
+	</message>
+	<portType name="wsFDHomeBankingSoapPort">
+		<operation name="Execute">
+			<input message="wsdlns:wsFDHomeBanking.ExecuteSoapIn" />
+			<output message="wsdlns:wsFDHomeBanking.ExecuteSoapOut" />
+		</operation>
+	</portType>
+	<binding name="wsFDHomeBankingSoapBinding" type="wsdlns:wsFDHomeBankingSoapPort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="Execute">
+			<soap:operation soapAction="ITALCREDWEBaction/AWSFDHOMEBANKING.Execute" />
+			<input>
+				<soap:body use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="wsFDHomeBanking">
+		<port name="wsFDHomeBankingSoapPort" binding="wsdlns:wsFDHomeBankingSoapBinding">
+			<soap:address location="http://200.58.145.180/WS_HB/awsfdhomebanking.aspx" />
+		</port>
+	</service>
+</definitions>
